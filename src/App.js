@@ -1,22 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import { Chart } from "react-google-charts";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>My daily activities</h1>
+
+        <Chart
+          chartType="PieChart"
+          data={[
+            ["Task", "Hours per Day"],
+            ["Eat", 3],
+            ["Study", 6],
+            ["Dance", 2],
+            ["Sleep", 8],
+            ["Homework", 5]
+          ]}
+          width="100%"
+          height="400px"
+          legendToggle
+        />
       </header>
     </div>
   );
